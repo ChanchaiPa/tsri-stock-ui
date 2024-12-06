@@ -1,0 +1,61 @@
+.main-button {
+    text-align: center;
+    border: 2px solid var(--border-dark-color);
+    border-radius: 10px;
+    width: 60px;
+    height: 50px;
+    font-weight: bold;
+    color: #8f8e8e;
+    background-size: 20px 20px;
+    background-position-x: center;
+    background-position-y: 6px;
+    background-color: white;
+    font-size: 13px;
+    box-shadow: 0px 3px 10px 1px var(--border-dark-color);
+
+    cursor: pointer;
+}
+
+.main-button>div {
+    margin-top: 25px !important;
+}
+
+.main-button:not(:disabled):hover {
+    transition: 0.3s;
+    filter: brightness(0.9);
+}
+
+.main-button:disabled {
+    opacity: 0.3;
+    box-shadow: none !important;
+    cursor: initial;
+}
+
+.main-button.new {
+    background-image: url('./assets/plus.png');
+    background-repeat: no-repeat;
+}
+
+.main-button.delete {
+    /*border: 2px solid #d36d6d !important;
+    color: #d36d6d !important;
+    box-shadow: 0px 3px 10px 1px #d36d6d80;*/
+    background-image: url('./assets/trash-can.png');
+    background-repeat: no-repeat;
+}
+
+.main-button.edit {
+    background-image: url('./assets/edit.png');
+    background-repeat: no-repeat;
+}
+
+.main-button.save {
+    background-image: url('./assets/floppy-disk.png');
+    background-repeat: no-repeat;
+}
+
+.main-button.back {
+    background-image: url('./assets/back-arrow.png');
+    background-repeat: no-repeat;
+}
+

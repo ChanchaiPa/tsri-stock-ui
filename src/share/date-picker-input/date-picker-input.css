@@ -1,0 +1,317 @@
+/* customize css input */
+.date-input {
+    border-right: none !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.date_picker {
+    background-image: url('../../assets/calendar.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 45px;
+    height: auto;
+    background-color: white;
+    border: 1px solid rgb(212, 212, 212);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.date_picker:disabled {
+    background-color: rgb(223, 223, 223);
+    cursor: initial;
+}
+
+.date_picker_container {
+    height: auto;
+    width: auto;
+    background-color: white;
+    position: absolute;
+    z-index: 2 !important;
+    animation: fade_effect 0.3s !important;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 2px rgba(128, 128, 128, 0.3);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'date time' 'footer footer';
+}
+
+.date_input_container {
+    grid-area: date;
+    width: 280px;
+}
+
+.time_input_container {
+    grid-area: time;
+    width: 100px;
+    border-left: 1px solid rgb(192, 192, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.date_picker_footer_container {
+    grid-area: footer;
+    height: 42px;
+    width: auto;
+}
+
+.header_date_picker_container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px 15px 0px 15px;
+}
+
+.header_date_picker_first {
+    flex: 1 0 50%;
+}
+
+.header_date_picker_first>span:first-child {
+    font-weight: bold;
+}
+
+.header_date_picker_first>span:last-child {
+    font-weight: bold;
+    color: gray;
+}
+
+.header_date_picker_last {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+}
+
+.header_date_picker_last>button:first-child {
+    background-image: url('../../assets/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center;
+    height: 25px;
+    width: 25px;
+    transform: rotate(90deg);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.header_date_picker_last>button:last-child {
+    background-image: url('../../assets/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center;
+    height: 25px;
+    width: 25px;
+    transform: rotate(270deg);
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.header_date_picker_last>button:active {
+    transition: 0.1s;
+    filter: brightness(0.9);
+}
+
+.header_day_of_week {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px 5px;
+    user-select: none;
+}
+
+.header_day_of_week>span {
+    flex: 1 0 14.28%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.body_day_of_month {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0px 5px;
+    user-select: none;
+}
+
+.body_day_of_month>span {
+    flex: 0 1 14.28%;
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.body_day_of_month>span.selected {
+    transition: 0.2s;
+    background-color: #227C67;
+    border-radius: 20px;
+    color: white;
+}
+
+.body_day_of_month>span.active {
+    cursor: pointer;
+    color: gray;
+}
+
+.body_day_of_month>span.active:hover {
+    color: #ED1A3B
+}
+
+.body_day_of_month>span.none {
+    cursor: initial;
+    color: rgb(204, 204, 204) !important;
+}
+
+.date_picker_cancel_button {
+    border: none;
+    color: #ED1A3B;
+    font-weight: bold;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    font-size: 15px;
+    margin: 10px 5px;
+}
+
+.date_picker_accept_button {
+    border: none;
+    color: #227C67;
+    font-weight: bold;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    font-size: 15px;
+    margin: 10px 5px;
+}
+
+.time_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.time_label {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(192, 192, 192);
+    width: 30px;
+    margin: 5px 5px;
+    font-weight: 550;
+    font-size: 20px;
+    color: gray;
+    user-select: none;
+}
+
+.increase_time_button {
+    flex: 0 0 45%;
+    background-image: url('../../assets/down-arrow.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+    transform: rotate(180deg);
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.increase_time_button:active {
+    transition: 0.1s;
+    filter: brightness(0.9);
+}
+
+/* .increase_time_button:nth-child(1) {
+    position: absolute;
+    left: 13px;
+    top: -12px;
+}
+
+.increase_time_button:nth-child(2) {
+    position: absolute;
+    right: 13px;
+    top: -12px;
+} */
+
+.decrease_time_button {
+    flex: 0 0 45%;
+    background-image: url('../../assets/down-arrow.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15px !important;
+    width: 15px !important;
+    transform: rotate(0deg);
+    border: none;
+    background-color: transparent;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.decrease_time_button:active {
+    transition: 0.1s;
+    filter: brightness(0.9);
+}
+
+/* .decrease_time_button:nth-child(6) {
+    position: absolute;
+    left: 13px;
+    top: 42px;
+}
+
+.decrease_time_button:nth-child(7) {
+    position: absolute;
+    right: 13px;
+    top: 42px;
+} */
+
+
+@media only screen and (max-width: 600px) {
+    .time_input_container {
+        width: 70px;
+    }
+    .time_label {
+        width: 20px;
+        font-size: 14px;
+    }
+    .date_input_container {
+        width: 220px;
+    }
+    .header_day_of_week>span {
+        font-size: 12px;
+    }
+    .body_day_of_month>span {
+        font-size: 13px;
+    }
+}
+
+
+@keyframes fade_effect {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+
+.input-label {
+    margin-left: 3px;
+    color: #464646 !important;
+    font-weight: bold;
+}
+
+.input-group {
+    position: relative !important;
+    padding-top: 5px;
+}

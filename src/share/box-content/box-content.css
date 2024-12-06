@@ -1,0 +1,129 @@
+.box-container {
+    box-shadow: 0px 5px 10px 1px var(--border-dark-color);
+    border-radius: 10px;
+    /*overflow: hidden;*/
+    position: relative;
+    border: 1px solid var(--border-dark-color);
+    background-color: white;
+    /*height: 100%;*/
+    padding-bottom: 15px;
+}
+
+.box-container-without-collapse {
+    margin-top: 5px;
+    padding-bottom: 15px;
+    position: relative;
+    background-color: transparent;
+    font-weight: bold;
+    height: auto;
+    width: 100%;
+}
+
+.sub-box-container {
+    margin-top: 10px;
+    padding-bottom: 15px;
+    position: relative;
+    background-color: white;
+    font-weight: bold;
+    border: 2px solid var(--border-dark-color);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.header-box {
+   display: inline-flex;
+   height: auto;
+   width: 100%;
+   border-radius: 10px 10px 0px 0px;
+}
+
+/*.header-box.dashboard {
+}*/
+
+.body-box {
+   margin-top: 4px;
+}
+
+.body-box>.line {
+    left: 15px;
+    position: absolute;
+    margin-top: -14px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    width: calc(100% - 30px);
+}
+
+.show-button {
+    border: none;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    background-color: transparent;
+    background-image: url('../../assets/square.png');
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 10px;
+    border: 1px solid #8f8e8e;
+    background-color: white;
+}
+
+.show-button:active {
+    transition: 0.2s;
+    background-color: #d3d3d3;
+ 
+}
+
+.show-button.dashboard {
+    position: relative !important;
+    right: 4px !important;
+    top: 4px !important;
+    height: 25px;
+    width: 25px;
+}
+
+.collapse-button.dashboard {
+    position: relative !important;
+    right: 4px !important;
+    top: 4px !important;
+    height: 25px;
+    width: 25px;
+}
+
+.collapse-button {
+    border: none;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    background-color: white;
+    background-image: url('../../assets/remove.png');
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 10px;
+    border: 1px solid #8f8e8e;
+}
+
+.collapse-button:active {
+    transition: 0.2s;
+    background-color: #d3d3d3;
+}
+
+.header-label {
+    margin: 5px 15px;
+    color: #383838;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.header-label.dashboard {
+    margin: 5px 15px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+}
