@@ -117,10 +117,10 @@ export const SearchAction = (cond: SearchAsset, navigate: any) =>{
             const resData  = response.data;
             if (resData.list.length === 0) {
                 alert("Not found data...");
-                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: 'Not found data...'}) );
+                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: 'Not found data...'} as any) );
             }
             else {
-                dispatch( _set_list({page: cond.pageNo, pages: resData.total_page, total: resData.total_record, list: resData.list, errmsg: ''}) );
+                dispatch( _set_list({page: cond.pageNo, pages: resData.total_page, total: resData.total_record, list: resData.list, errmsg: ''} as any) );
             }
         }
         catch(e: any) {
@@ -129,7 +129,7 @@ export const SearchAction = (cond: SearchAsset, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: e.message}) );
+                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: e.message} as any) );
             }
         }
     }
@@ -144,7 +144,7 @@ export const SaveAction = (data: Asset, navigate: any) =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.post(_serviceurl, data, config);   
             const resData  = response.data;
-            dispatch( _set_data({data: resData, errmsg: ''}) );           
+            dispatch( _set_data({data: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -152,7 +152,7 @@ export const SaveAction = (data: Asset, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else { console.log(e);
-                dispatch( _set_data({data: data, errmsg: e.response.data}) );
+                dispatch( _set_data({data: data, errmsg: e.response.data} as any) );
             }
         }
     }
@@ -169,7 +169,7 @@ export const GetdataAction = (ast_id: string, navigate: any) =>{
             const response = await axios.get(_serviceurl, config);   
             const resData  = response.data;
             ast_grp_id     = response.data.ast_grp_id;
-            dispatch( _set_data({data: resData, errmsg: ''}) );          
+            dispatch( _set_data({data: resData, errmsg: ''} as any) );          
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -177,7 +177,7 @@ export const GetdataAction = (ast_id: string, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_data({data: null, errmsg: e.message}) );
+                dispatch( _set_data({data: null, errmsg: e.message} as any) );
             }
         }
         
@@ -187,7 +187,7 @@ export const GetdataAction = (ast_id: string, navigate: any) =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.get(_serviceurl2, config);   
             const resData  = response.data;
-            dispatch( _set_droplist2({droplist: resData, errmsg: ''}) );           
+            dispatch( _set_droplist2({droplist: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -195,7 +195,7 @@ export const GetdataAction = (ast_id: string, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_droplist2({droplist: null, errmsg: e.message}) );
+                dispatch( _set_droplist2({droplist: null, errmsg: e.message} as any) );
             }
         }
     }    
@@ -210,7 +210,7 @@ export const DropList1Action = () =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.get(_serviceurl, config);   
             const resData  = response.data;
-            dispatch( _set_droplist1({droplist: resData, errmsg: ''}) );           
+            dispatch( _set_droplist1({droplist: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -218,7 +218,7 @@ export const DropList1Action = () =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_droplist1({droplist: null, errmsg: e.message}) );
+                dispatch( _set_droplist1({droplist: null, errmsg: e.message} as any) );
             }
         }
     }    
@@ -233,7 +233,7 @@ export const DropList2Action = (grp_id: string) =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.get(_serviceurl, config);   
             const resData  = response.data;
-            dispatch( _set_droplist2({droplist: resData, errmsg: ''}) );           
+            dispatch( _set_droplist2({droplist: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -241,7 +241,7 @@ export const DropList2Action = (grp_id: string) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_droplist2({droplist: null, errmsg: e.message}) );
+                dispatch( _set_droplist2({droplist: null, errmsg: e.message} as any) );
             }
         }
     }    

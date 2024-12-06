@@ -84,7 +84,7 @@ const AssetSearch = (props: Props) => {
             <label>กลุ่มวัสดุ</label>
             <select className="form-select" value={param1}
                 onChange={(e: any)=> {
-                    dispatch( _param1_change({param1: e.target.value}) );
+                    dispatch( _param1_change({param1: e.target.value} as any) );
                     dispatch( DropList2Action(e.target.value) );
                 }} >
                 <option key='' value=''>ทุกกลุ่ม</option>
@@ -96,7 +96,7 @@ const AssetSearch = (props: Props) => {
           <div className='col-sm-3'>
             <label>หมวดหมู่</label>
             <select className="form-select" value={param2}
-                onChange={(e: any)=> dispatch( _param2_change({param2: e.target.value}) )}>
+                onChange={(e: any)=> dispatch( _param2_change({param2: e.target.value} as any) )}>
                 <option key='' value=''>ทุกหมวดหมู่</option>
                 { droplist2.map((item, index) => (
                   <option key={index} value={item.code}> {item.name} </option>
@@ -106,7 +106,7 @@ const AssetSearch = (props: Props) => {
           <div className='col-sm-3'>
             <label>ชื่อทรัพย์สิน</label>
             <input type="text" className="form-control" value={param3}
-                onChange={(e: any)=> dispatch( _param3_change({param3: e.target.value}) )} />    
+                onChange={(e: any)=> dispatch( _param3_change({param3: e.target.value} as any) )} />    
           </div>
           <div className='col-sm-3' style={{marginTop: 23, paddingRight: 23, textAlign: 'right'}}>
             <button type="button" className="btn btn-success" onClick={()=>search()}> Search </button>&nbsp;

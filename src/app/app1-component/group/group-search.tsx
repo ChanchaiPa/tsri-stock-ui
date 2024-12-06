@@ -73,7 +73,7 @@ const GroupSearch = (props: Props) => {
           <div className='col-sm-3'>
             <label>ชื่อกลุ่มวัสดุ</label>
             <input type="text" className="form-control" value={param1} 
-                onChange={(e: any)=> dispatch( _param1_change({param1: e.target.value}) )} />           
+                onChange={(e: any)=> dispatch( _param1_change({param1: e.target.value} as any) )} />           
           </div>
           <div className='col-sm-3'>&nbsp;</div>
           <div className='col-sm-3'>&nbsp;</div>

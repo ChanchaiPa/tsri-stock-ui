@@ -88,10 +88,10 @@ export const SearchAction = (cond: SearchSupplier, navigate: any) =>{
             const resData  = response.data;
             if (resData.list.length === 0) {
                 alert("Not found data...");
-                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: 'Not found data...'}) );
+                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: 'Not found data...'} as any) );
             }
             else {
-                dispatch( _set_list({page: cond.pageNo, pages: resData.total_page, total: resData.total_record, list: resData.list, errmsg: ''}) );
+                dispatch( _set_list({page: cond.pageNo, pages: resData.total_page, total: resData.total_record, list: resData.list, errmsg: ''} as any) );
             }
         }
         catch(e: any) {
@@ -100,7 +100,7 @@ export const SearchAction = (cond: SearchSupplier, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: e.message}) );
+                dispatch( _set_list({page: 1, pages: 1, total: 0, list: [], errmsg: e.message} as any) );
             }
         }
     }
@@ -115,7 +115,7 @@ export const SaveAction = (data: Supplier, navigate: any) =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.post(_serviceurl, data, config);   
             const resData  = response.data;
-            dispatch( _set_data({data: resData, errmsg: ''}) );           
+            dispatch( _set_data({data: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             console.log(e);
@@ -124,7 +124,7 @@ export const SaveAction = (data: Supplier, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_data({data: data, errmsg: e.message}) );
+                dispatch( _set_data({data: data, errmsg: e.message} as any) );
             }
         }
     }
@@ -139,7 +139,7 @@ export const GetdataAction = (sup_id: string, navigate: any) =>{
             const config   = { withCredentials: true, headers: {'Content-Type': 'application/json;charset=UTF-8'} };
             const response = await axios.get(_serviceurl, config);   
             const resData  = response.data;
-            dispatch( _set_data({data: resData, errmsg: ''}) );           
+            dispatch( _set_data({data: resData, errmsg: ''} as any) );           
         }
         catch(e: any) {
             if (e.response.status === 401) {
@@ -147,7 +147,7 @@ export const GetdataAction = (sup_id: string, navigate: any) =>{
                 dispatch( _authenReset() );
             }
             else {
-                dispatch( _set_data({data: null, errmsg: e.message}) );
+                dispatch( _set_data({data: null, errmsg: e.message} as any) );
             }
         }
     }    

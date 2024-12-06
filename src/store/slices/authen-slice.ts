@@ -89,7 +89,7 @@ export const LoginAction = (username: string, password: string, navigate: any) =
         dispatch( _loadingFinish() );
         console.log(e);
         
-        const payload = {moreinfo: 'Login Fail..'};
+        const payload = {moreinfo: 'Login Fail..'}  as any;
         dispatch( _authenFailed(payload) );
       }
   }

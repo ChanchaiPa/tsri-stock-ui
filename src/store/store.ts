@@ -23,7 +23,7 @@ const reducer = {
 export const store1 = configureStore({
     reducer,
     devTools: env.status !== Deploy.PRO,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger as any),
 });
 
 export type RootState = ReturnType<typeof store1.getState>;
