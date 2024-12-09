@@ -7,6 +7,7 @@ import { PasswordInput, TextInput } from '../share/input/input';
 
 import { RootState, useAppDispatch } from "../store/store";
 import { LoginAction, _authenReset } from "../store/slices/authen-slice";
+import { Deploy, env } from "../Environment";
 
 interface State {
     username: string,
@@ -66,6 +67,7 @@ export const App2Login =(props: any) =>{
                 <Alert type={TYPE.DANGER}>{authenState.moreinfo}</Alert>
             </div>
         </SubBoxContent>
+        <div>{Deploy[env.status]}</div>
         </div>
     );
 
